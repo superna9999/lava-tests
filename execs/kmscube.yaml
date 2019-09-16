@@ -1,0 +1,12 @@
+metadata:
+  name: kmscube tests
+  format: "kmscube Test Definition 1.0"
+  description: "kmscube test"
+  version: 1.0
+run:
+    steps:
+      - echo "kmscube tests"
+      - lava-test-set start test-boot
+      - chmod +x ./kmscube.sh
+      - ./kmscube.sh
+      - lava-test-set stop test-boot
