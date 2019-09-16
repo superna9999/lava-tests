@@ -1,13 +1,17 @@
 #!/bin/sh
 
-sleep 10
+set -ex
+
+sleep 2
 
 modetest -M meson
+
+sleep 2
 
 kmscube -D /dev/dri/card1 &
 
 PID=$!
 
-sleep 10
+sleep 30
 
 kill -9 $PID
