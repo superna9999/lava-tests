@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -ex
+set -x
 
 sleep 2
 
@@ -8,10 +8,8 @@ modetest -M meson
 
 sleep 2
 
-kmscube -D /dev/dri/card1 &
+( kmscube -D /dev/dri/card1 ) &
 
-PID=$!
+sleep 60
 
-sleep 30
-
-kill -9 $PID
+killall -9 kmscube
