@@ -8,8 +8,8 @@ modetest -M meson
 
 sleep 2
 
-( kmscube -D /dev/dri/card1 ) &
+( sleep 60 ; killall -9 kmscube ) &
 
-sleep 60
+kmscube -D /dev/dri/card1
 
-killall -9 kmscube
+exit 0
